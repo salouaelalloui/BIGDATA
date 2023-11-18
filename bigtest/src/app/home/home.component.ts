@@ -7,13 +7,16 @@ import { EmployeeService } from '../employee.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss','./home.component.css']
 })
 export class HomeComponent implements OnInit {
   selectedManagerOption: number = 0;
   data = new Employee();
   currentDate: Date = new Date();
   dataFinal = new Employee();
+  respon!:any;
+  bool!:any;
+  result!:any;
   constructor(private employeeService:EmployeeService, private router : Router,private route : ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -38,6 +41,15 @@ export class HomeComponent implements OnInit {
 
     this.employeeService.insert(this.data).subscribe(res=>{
       console.log(res)
+      this.respon= res;
+      if(this.respon.responce==0){
+        this.bool=this.respon.responce
+        this.result= "le client va quitter l'entreprise"
+      }
+      if(this.respon.responce==1){
+        this.bool=this.respon.responce
+        this.result= "le client va rester l'entreprise"
+      }
      })
   }
 }

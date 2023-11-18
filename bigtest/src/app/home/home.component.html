@@ -6,10 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    <form class="shadow-lg p-3 mb-5 bg-white rounded" style="width:60%; margin-top:2%;margin-left:290px ;border-radius:67px;" (ngSubmit)="insertData()">
-        <div class="mb-3">
+  <nav    class="navbar navbar-expand-lg sticky-top " >
+    <div class="container-fluid">
+      <a class="navbar-brand" id="tu"style="font-family:  Verdana, sans-serif;font-weight:bold;">Purchases</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+
+       <div >
+       </div>
+      </div>
+    </div>
+  </nav>
+    <form  style="width:50%; margin-top:2%;margin-left:29% ;border-radius:67px; margin-bottom:5%" (ngSubmit)="insertData()">
+
+        <h5 class="yyu">SALAAM</h5>
+
+      <div class="mb-3">
           <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control rounded-pill"  id="name" name ="name" [(ngModel)]="data.name" >
+          <input type="text" class="form-control rounded-pill  " id="name" name ="name" [(ngModel)]="data.name" >
 
         </div>
         <div class="mb-3">
@@ -23,6 +39,7 @@
         <div class="mb-3">
           <label for="prenom" class="form-label">Account Manager</label>
           <!-- <input type="text" class="form-control rounded-pill"  id="account_manager" name="account_manager" [(ngModel)]="data.account_manager"> -->
+          <div class="d-flex justify-content-around">
           <div class="form-check">
             <input class="form-check-input" type="radio" name ="selectedManagerOption"id="selectedManagerOption" [(ngModel)]="selectedManagerOption" [value]="0">
             <label class="form-check-label" for="flexRadioDefault1">
@@ -36,9 +53,10 @@
             </label>
           </div>
         </div>
+        </div>
         <div class="mb-3">
           <label for="prenom" class="form-label">Years</label>
-          <input type="text" class="form-control rounded-pill"  id="years" name="years" [(ngModel)]="data.years">
+          <input type="number" class="form-control rounded-pill"  id="years" name="years" [(ngModel)]="data.years">
         </div>
         <div class="mb-3">
           <label for="prenom" class="form-label">Number of websites</label>
@@ -58,8 +76,15 @@
         </div>
 
 
-        <button type="submit" class="btn btn-danger">valider</button>
+        <button type="submit" class="btn btn-danger rounded-pill " style="margin-left: 43%;">valider</button>
       </form>
 
+
+      <div  *ngIf="bool==1" class="shadow-lg p-3 mb-5 bg-white rounded"  style="width:50%; margin-top:2%;margin-left:29% ;border-radius:67px; margin-bottom:5%"  style="width: 50%; margin-top: 2%; margin-left: 29%; margin-bottom: 5%;" >
+        <p> {{result}}</p>
+      </div>
+      <div  *ngIf="bool==0" class="shadow-lg p-3 mb-5 bg-white rounded"  style="width:50%; margin-top:2%;margin-left:29% ;border-radius:67px; margin-bottom:5%"  style="width: 50%; margin-top: 2%; margin-left: 29%; margin-bottom: 5%;" >
+        <p> {{result}}</p>
+      </div>
 </body>
 </html>
