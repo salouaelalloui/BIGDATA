@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="shadow-lg p-3 mb-5 bg-white rounded" style="width:60%; margin-top:2%;margin-left:290px ;border-radius:67px;" (ngSubmit)="insertData()">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control rounded-pill"  id="name" name ="name" [(ngModel)]="data.name" >
+
+        </div>
+        <div class="mb-3">
+          <label for="number" class="form-label">Age</label>
+          <input type="number" class="form-control rounded-pill"  id="age" name="age" [(ngModel)]="data.age">
+        </div>
+        <div class="mb-3">
+          <label for="prenom" class="form-label">Total Purchase</label>
+          <input type="text" class="form-control rounded-pill"  id="total_purchases" name="total_purchases" [(ngModel)]="data.total_purchases">
+        </div>
+        <div class="mb-3">
+          <label for="prenom" class="form-label">Account Manager</label>
+          <!-- <input type="text" class="form-control rounded-pill"  id="account_manager" name="account_manager" [(ngModel)]="data.account_manager"> -->
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name ="selectedManagerOption"id="selectedManagerOption" [(ngModel)]="selectedManagerOption" [value]="0">
+            <label class="form-check-label" for="flexRadioDefault1">
+              No manager
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name ="selectedManagerOption"id="selectedManagerOption" [(ngModel)]="selectedManagerOption" [value]="1" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Account manager assingned
+            </label>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="prenom" class="form-label">Years</label>
+          <input type="text" class="form-control rounded-pill"  id="years" name="years" [(ngModel)]="data.years">
+        </div>
+        <div class="mb-3">
+          <label for="prenom" class="form-label">Number of websites</label>
+          <input type="text" class="form-control rounded-pill"  id="num_sites" name="num_sites" [(ngModel)]="data.num_sites">
+        </div>
+        <!-- <div class="mb-3">
+          <label for="prenom" class="form-label">Onboard dates</label>
+          <input type="text" class="form-control rounded-pill"  id="onboard_date" name="onboard_date" [(ngModel)]="data.onboard_date">
+        </div> -->
+        <div class="mb-3">
+          <label for="prenom" class="form-label">Location</label>
+          <input type="text" class="form-control rounded-pill"  id="location" name="location" [(ngModel)]="data.location">
+        </div>
+        <div class="mb-3">
+          <label for="prenom" class="form-label">Company</label>
+          <input type="text" class="form-control rounded-pill"  id="company" name="company" [(ngModel)]="data.company">
+        </div>
+
+
+        <button type="submit" class="btn btn-danger">valider</button>
+      </form>
+
+</body>
+</html>
